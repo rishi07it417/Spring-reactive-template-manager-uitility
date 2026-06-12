@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 @Repository
 public interface  TemplateStoreRepo extends ReactiveCrudRepository<TemplateStore, Long> {
 
-    @Query("SELECT templateStoreId, templateName, createdBy, createdDate FROM templateStore")
+    @Query("SELECT templateStoreId, templateName, createdBy, createdDate, updatedBy, updatedDate FROM templateStore")
     Flux<TemplateStore> getAllTemplates();
 
 }

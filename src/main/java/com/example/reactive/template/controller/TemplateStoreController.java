@@ -63,7 +63,7 @@ public class TemplateStoreController {
                                                       @RequestPart("templateName") String templateName,
                                                       @RequestPart("user") String user,
                                                       @PathVariable("id") Long id)  {
-        return DataBufferUtils.join(file.content())
+       return DataBufferUtils.join(file.content())
                 .map(buffer -> {
                     byte[] bytes = new byte[buffer.readableByteCount()];
                     buffer.read(bytes);

@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Objects;
-
 @Service
 public class TemplateStoreService {
 
@@ -71,7 +69,7 @@ public class TemplateStoreService {
                     existingTemplate.setTemplateName(template.getTemplateName());
                     existingTemplate.setUpdatedBy(template.getUpdatedBy());
                     existingTemplate.setUpdatedDate(template.getUpdatedDate());
-
+                    existingTemplate.setTemplate(template.getTemplate());
                     templateStoreRepo.save(existingTemplate).subscribe();
 
                     return template;
